@@ -492,6 +492,10 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
               {description = "run gui editor", group = "launcher"}),
 
+    -- Custom
+    awful.key({ modkey }, "n", function () awful.spawn("spotify") end,
+              {description = "run spotify", group = "launcher"}),
+
     -- Default
     --[[ Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
