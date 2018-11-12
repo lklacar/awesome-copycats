@@ -85,14 +85,14 @@ local themes = {
     "vertex",          -- 10
 }
 
-local chosen_theme = themes[5]
+local chosen_theme = themes[7]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "urxvtc"
+local terminal     = "gnome-terminal"
 local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = "gvim"
-local browser      = "firefox"
-local guieditor    = "atom"
+local browser      = "google-chrome"
+local guieditor    = "code"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
@@ -278,19 +278,19 @@ globalkeys = my_table.join(
     ),
 
     -- By direction client focus
-    awful.key({ modkey }, "j",
+    awful.key({ modkey }, "k",
         function()
             awful.client.focus.global_bydirection("down")
             if client.focus then client.focus:raise() end
         end,
         {description = "focus down", group = "client"}),
-    awful.key({ modkey }, "k",
+    awful.key({ modkey }, "i",
         function()
             awful.client.focus.global_bydirection("up")
             if client.focus then client.focus:raise() end
         end,
         {description = "focus up", group = "client"}),
-    awful.key({ modkey }, "h",
+    awful.key({ modkey }, "j",
         function()
             awful.client.focus.global_bydirection("left")
             if client.focus then client.focus:raise() end
@@ -743,3 +743,6 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("focus", border_adjust)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+
+
